@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="nama_satu_view_tree" model="ir.ui.view">
+        <field name="name">nama_satu.view.tree</field>
+        <field name="model">nama.satu</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="nama"/>
+                <field name="nomor"/>
+                <field name="betulan"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="nama_satu_view_form" model="ir.ui.view">
+        <field name="name">nama_satu.view.form</field>
+        <field name="model">nama.satu</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="nama"/>
+                        <field name="nomor"/>
+                        <field name="betulan"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="nama_satu_action" model="ir.actions.act_window">
+        <field name="name">nama satu action</field>
+        <field name="res_model">nama.satu</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>masukan data nama satu</p>
+        </field>
+    </record>
+
+    <record id="todo_list_js_action" model="ir.actions.client">
+        <field name="name">todo list</field>
+        <field name="tag">tes_satu.action_todo_list_js</field>
+    </record>
+
+    <menuitem
+        id="model_tes_satu_menu"
+        name="model tes satu"
+        sequence="10"/>
+
+
+    <menuitem
+        id="nama_satu_menu"
+        name="nama satu"
+        action="nama_satu_action"
+        parent="model_tes_satu_menu"
+        sequence="10"/>
+    
+    <menuitem
+        id="nama_satu_menu_js"
+        name="nama satu js"
+        action="todo_list_js_action"
+        parent="model_tes_satu_menu"
+        sequence="10"/>
+
+</odoo>
